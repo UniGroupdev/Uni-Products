@@ -14,15 +14,16 @@
             --primary-bg: #1a1a1a;
             --text-light: #ffffff;
             --text-dim: #cccccc;
-            /* ألوان العلامات التجارية */
-            --accent-infinix: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            
+            /* ألوان العلامات التجارية المعدلة */
+            --accent-infinix: linear-gradient(135deg, #43E98B 0%, #30A75C 100%); /* تم توحيده للأخضر */
             --accent-doogee: linear-gradient(135deg, #3d3393 0%, #2b76b9 37%, #2cacd1 65%, #35eb93 100%);
             --accent-doogee-vip: linear-gradient(135deg, #bf953f 0%, #fcf6ba 45%, #b38728 50%, #fbf5b7 100%);
-            --accent-gtab: linear-gradient(135deg, #FF416C 0%, #FF4B2B 100%);
-            --accent-zte: linear-gradient(135deg, #00b09b 0%, #96c93d 100%);
-            /* تم تحديث ألوان الإكسسوارات لتبتعد عن الأسود */
-            --accent-watch: linear-gradient(135deg, #43E98B 0%, #30A75C 100%); /* لون جديد للساعات (أخضر زمردي) */
-            --accent-audio: linear-gradient(135deg, #FF7B59 0%, #FF3366 100%); /* لون جديد للسماعات (أحمر مرجاني) */
+            --accent-gtab: linear-gradient(135deg, #A83A20 0%, #E86B49 100%); /* تم تغيير اللون لدرجة أغمق */
+            --accent-zte: linear-gradient(135deg, #444444 0%, #666666 100%); /* تم توحيده للرمادي الغامق */
+            
+            --accent-watch: linear-gradient(135deg, #43E98B 0%, #30A75C 100%); /* تم الاحتفاظ به */
+            --accent-audio: linear-gradient(135deg, #FF7B59 0%, #FF3366 100%); /* تم الاحتفاظ به */
         }
 
         * {
@@ -147,8 +148,10 @@
             font-size: 12rem;
             text-shadow: 0 10px 30px rgba(0,0,0,0.3);
             animation: float 6s ease-in-out infinite;
+            /* تم توحيد لون الأيقونات للأبيض الثابت */
+            -webkit-text-fill-color: var(--text-light) !important; 
         }
-
+        
         .brand-tag {
             z-index: 2;
             margin-top: 20px;
@@ -158,7 +161,8 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             opacity: 0.8;
-            color: white;
+            /* تم توحيد لون العلامة التجارية للأبيض الثابت */
+            color: var(--text-light) !important;
         }
 
         /* قسم المعلومات */
@@ -189,9 +193,10 @@
             font-weight: 700;
             margin-bottom: 25px; 
             line-height: 1.1;
+            /* تم توحيد لون العنوان للأبيض الثابت */
             background-clip: text;
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            -webkit-text-fill-color: var(--text-light) !important; 
         }
 
         /* شبكة المواصفات */
@@ -225,7 +230,8 @@
         .spec-value {
             font-size: 1.1rem;
             font-weight: 700;
-            color: var(--text-light);
+            /* تم توحيد لون قيمة المواصفات للأبيض الثابت */
+            color: var(--text-light) !important; 
             font-family: 'Cairo', sans-serif;
         }
         
@@ -236,7 +242,7 @@
             padding: 15px;
             border-radius: 15px;
             margin-top: 5px;
-            margin-bottom: 20px; /* **تمت الإضافة:** مسافة سفلية قياسية */
+            margin-bottom: 20px; 
             position: relative;
         }
         
@@ -289,7 +295,7 @@
 
         .indicators {
             position: absolute;
-            bottom: 60px; /* **تم التعديل:** رفعت المؤشرات للأعلى قليلاً */
+            bottom: 60px; 
             left: 50%;
             transform: translateX(-50%);
             display: flex;
@@ -333,7 +339,7 @@
             /* **تصغير القسم البصري وزيادة حجمه الداخلي** */
             .visual-section { 
                 flex: 0 0 auto; 
-                min-height: 200px; /* زيادة الارتفاع قليلاً لتكبير الصورة */
+                min-height: 200px; 
                 height: auto; 
                 padding: 10px 10px 0; 
                 display: flex;
@@ -366,21 +372,27 @@
                 margin-top: 5px;
                 margin-bottom: 5px; 
                 order: 2;
+                /* تم توحيد اللون هنا أيضاً */
+                -webkit-text-fill-color: var(--text-light) !important;
             }
 
             .image-container { 
-                height: 110px; /* زيادة ارتفاع حاوية الصورة لتكبيرها */
+                height: 110px; 
                 width: 70%;
                 order: 3;
                 margin-bottom: 5px;
             }
             .product-icon-fallback { 
-                font-size: 5rem; /* زيادة حجم الأيقونة لتكبيرها */
+                font-size: 5rem; 
+                /* تم توحيد اللون هنا أيضاً */
+                -webkit-text-fill-color: var(--text-light) !important;
             }
             .brand-tag {
                 order: 4;
                 font-size: 1.2rem; 
                 margin-top: 5px;
+                /* تم توحيد اللون هنا أيضاً */
+                color: var(--text-light) !important;
             }
 
             /* تغيير طريقة عرض المواصفات (لضغطها) */
@@ -406,6 +418,8 @@
             }
             .specs-grid .spec-value {
                 font-size: 1rem; 
+                /* تم توحيد اللون هنا أيضاً */
+                color: var(--text-light) !important; 
             }
             .nav-btn {
                 width: 30px; 
@@ -413,7 +427,7 @@
                 font-size: 0.8rem;
             }
             .indicators {
-                bottom: 30px; /* **تم التعديل:** رفع المؤشرات للأعلى في وضع الهاتف */
+                bottom: 30px; /* رفع المؤشرات لـ 30px */
             }
         }
         /* ====== التعديلات الخاصة بشاشات الهاتف تنتهي هنا ====== */
@@ -505,7 +519,7 @@
                 name: "DooGee TAB A9",
                 category: "Tablet | تابلت",
                 brand: "DooGee",
-                theme: "var(--accent-doogee)",
+                theme: "var(--accent-doogee-vip)", // تم توحيد اللون
                 icon: "icon-tablet",
                 image: "images/doogee_tab_a9.png",
                 specs: [
@@ -522,7 +536,7 @@
                 name: "G-TAB Pad 10",
                 category: "Tablet | تابلت",
                 brand: "G-TAB",
-                theme: "var(--accent-gtab)",
+                theme: "var(--accent-gtab)", // تم تغيير اللون
                 icon: "icon-tablet",
                 image: "images/gtab_pad_10.png",
                 specs: [
@@ -556,16 +570,16 @@
                 name: "G-TAB T9 Series",
                 category: "Tablet | تابلت",
                 brand: "G-TAB",
-                theme: "var(--accent-gtab)",
+                theme: "var(--accent-gtab)", // تم تغيير اللون
                 icon: "icon-tablet",
                 image: "images/gtab_t9_series.png",
                 specs: [
                     { label: "المعالج", value: "Rockchip RK3562" },
                     { label: "التخزين والرام", value: "64GB | 3GB RAM" },
-                    { label: "الاتصال", value: "Wi‑Fi Only" }, // تم التعديل
+                    { label: "الاتصال", value: "Wi‑Fi Only" }, 
                     { label: "نظام التشغيل", value: "Android 14" },
-                    { label: "مرفقات الكرتونه", value: "شاحن، كابل، اسكرينة شاشة" }, // تم التعديل
-                    { label: "البطاريه", value: "5500 mAh" } // تم التعديل
+                    { label: "مرفقات الكرتونه", value: "شاحن، كابل، اسكرينة شاشة" }, 
+                    { label: "البطاريه", value: "5500 mAh" } 
                 ],
                 extra: ["خيار اقتصادي ممتاز", "شاشة واضحة"]
             },
@@ -574,7 +588,7 @@
                 name: "ZTE Blade V60 Design",
                 category: "Smartphone | هاتف ذكي",
                 brand: "ZTE",
-                theme: "var(--accent-zte)",
+                theme: "var(--accent-zte)", // تم توحيد اللون
                 icon: "icon-phone",
                 image: "images/zte_blade_v60_design.png",
                 specs: [
@@ -591,27 +605,27 @@
                 name: "ZTE Blade A55",
                 category: "Smartphone | هاتف ذكي",
                 brand: "ZTE",
-                theme: "var(--accent-zte)",
+                theme: "var(--accent-zte)", // تم توحيد اللون
                 icon: "icon-phone",
                 image: "images/zte_blade_a55.png",
                 specs: [
                     { label: "المعالج", value: "Unisoc SC9863A" },
-                    { label: "التخزين والرام", value: "128GB | 4GB RAM" }, // تم التعديل
+                    { label: "التخزين والرام", value: "128GB | 4GB RAM" }, 
                     { label: "حجم الشاشه", value: "6.75 بوصة 90Hz" },
                     { label: "نظام التشغيل", value: "Android 14" },
                     { label: "مرفقات الكرتونه", value: "شاحن، كابل" },
                     { label: "البطاريه", value: "5000 mAh" }
                 ],
-                extra: ["بصمة جانبية", "الكاميرا الخلفية 13MP"] // تم التعديل
+                extra: ["بصمة جانبية", "الكاميرا الخلفية 13MP"] 
             },
             // --- WATCHES ---
             {
-                name: "Infinix SmartWatch XW3E", // تم التبديل
+                name: "Infinix SmartWatch XW3E",
                 category: "Smart Watch | ساعة ذكية",
                 brand: "Infinix",
-                theme: "var(--accent-watch)",
+                theme: "var(--accent-infinix)", // تم توحيد اللون
                 icon: "icon-watch",
-                image: "images/XW3E.png", // تم تعديل مسار الصورة
+                image: "images/XW3E.png",
                 specs: [
                     { label: "الشاشة", value: "1.43 بوصة AMOLED (466×466)" }, 
                     { label: "الاتصال", value: "Bluetooth 5.2 / 5.3 Calling" }, 
@@ -626,7 +640,7 @@
                 name: "Infinix Watch N4 Pro (XW4E)",
                 category: "Smart Watch | ساعة ذكية",
                 brand: "Infinix",
-                theme: "var(--accent-watch)",
+                theme: "var(--accent-infinix)", // تم توحيد اللون
                 icon: "icon-watch",
                 image: "images/infinix_watch_n4_pro.png",
                 specs: [
@@ -640,10 +654,10 @@
                 extra: ["شاشة أموليد", "تصميم دائري فاخر"]
             },
             {
-                name: "Infinix Watch N4 (XW4)", // تم إضافة المنتج الجديد
+                name: "Infinix Watch N4 (XW4)",
                 category: "Smart Watch | ساعة ذكية",
                 brand: "Infinix",
-                theme: "var(--accent-watch)",
+                theme: "var(--accent-infinix)", // تم توحيد اللون
                 icon: "icon-watch",
                 image: "images/XW4-N4.png", 
                 specs: [
@@ -657,12 +671,12 @@
                 extra: ["شاشة دائرية Full Touch HD", "+200 وجه للساعة"]
             },
             {
-                name: "Infinix SmartWatch XW3GT (Gold Edition)", // تم التبديل
+                name: "Infinix SmartWatch XW3GT (Gold Edition)", 
                 category: "Smart Watch | ساعة ذكية",
                 brand: "Infinix",
-                theme: "var(--accent-doogee-vip)", // لون ذهبي مميز
+                theme: "var(--accent-doogee-vip)", 
                 icon: "icon-watch",
-                image: "images/XW3GT.png", // تم تعديل مسار الصورة
+                image: "images/XW3GT.png", 
                 specs: [
                     { label: "الشاشة", value: "1.53 بوصة IPS (360×360)" }, 
                     { label: "البطارية", value: "500 mAh (تدوم حتى 10 أيام استخدام ثقيل)" }, 
@@ -677,7 +691,7 @@
                 name: "Infinix Watch H4 (XW4L)",
                 category: "Smart Watch | ساعة ذكية",
                 brand: "Infinix",
-                theme: "var(--accent-watch)",
+                theme: "var(--accent-infinix)", // تم توحيد اللون
                 icon: "icon-watch",
                 image: "images/infinix_watch_h4.png",
                 specs: [
@@ -692,7 +706,7 @@
             },
             // --- AUDIO ---
             {
-                name: "Infinix TWS XEOE01", // تم تعديل الاسم
+                name: "Infinix TWS XEOE01", 
                 category: "Audio | سماعات (مفتوحة)",
                 brand: "Infinix",
                 theme: "var(--accent-audio)",
@@ -709,7 +723,7 @@
                 extra: ["جودة صوت واضحة وآمنة في الشارع", "تصميم رياضي وعصري"]
             },
             {
-                name: "Infinix XE28 (Buds NC)", // تم التبديل
+                name: "Infinix XE28 (Buds NC)", 
                 category: "Audio | سماعات (عزل ضوضاء)",
                 brand: "Infinix",
                 theme: "var(--accent-audio)",
@@ -726,7 +740,7 @@
                 extra: ["لون أخضر مطفي عصري", "دعم تطبيق Welife (Game Mode)"]
             },
             {
-                name: "Infinix XE30S Black", // تم إضافة المنتج الجديد
+                name: "Infinix XE30S Black", 
                 category: "Audio | سماعات (للألعاب)",
                 brand: "Infinix",
                 theme: "var(--accent-audio)",
@@ -743,7 +757,7 @@
                 extra: ["أداء ممتاز للألعاب", "دعم تطبيق Welife"]
             },
             {
-                name: "Infinix TWS XE37", // تم تعديل الاسم
+                name: "Infinix TWS XE37", 
                 category: "Audio | سماعات (شاشة وتحكم)",
                 brand: "Infinix",
                 theme: "var(--accent-audio)",
@@ -760,7 +774,7 @@
                 extra: ["التحكم باللمس من العلبة", "تطبيق AI Translation"]
             },
             {
-                name: "OPPO Enco Buds2", // تم إضافة المنتج الجديد
+                name: "OPPO Enco Buds2", 
                 category: "Audio | سماعات",
                 brand: "OPPO",
                 theme: "linear-gradient(135deg, #FF6F61 0%, #FFB6C1 100%)", // لون جديد لـ OPPO
