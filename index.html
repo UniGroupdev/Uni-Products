@@ -236,6 +236,7 @@
             padding: 15px;
             border-radius: 15px;
             margin-top: 5px;
+            margin-bottom: 20px; /* **تمت الإضافة:** مسافة سفلية قياسية */
             position: relative;
         }
         
@@ -288,7 +289,7 @@
 
         .indicators {
             position: absolute;
-            bottom: 20px;
+            bottom: 60px; /* **تم التعديل:** رفعت المؤشرات للأعلى قليلاً */
             left: 50%;
             transform: translateX(-50%);
             display: flex;
@@ -346,6 +347,7 @@
                 flex: 1; 
                 padding: 10px 20px 10px 20px; 
                 padding-top: 5px; 
+                padding-bottom: 50px; /* **تم التعديل:** زيادة بادينج سفلي لدفع المحتوى بعيداً عن المؤشرات */
                 margin-top: 0;
                 justify-content: flex-start;
                 border-radius: 0 0 30px 30px;
@@ -411,7 +413,7 @@
                 font-size: 0.8rem;
             }
             .indicators {
-                bottom: 10px; 
+                bottom: 30px; /* **تم التعديل:** رفع المؤشرات للأعلى في وضع الهاتف */
             }
         }
         /* ====== التعديلات الخاصة بشاشات الهاتف تنتهي هنا ====== */
@@ -429,16 +431,6 @@
     <div class="indicators" id="indicators"></div>
 
     <script>
-        /*
-         * تعليمات وضع الصور:
-         * 1. ابحث عن خاصية "image" داخل كل منتج في الأسفل.
-         * 2. ضع رابط الصورة داخل علامات التنصيص. مثال: image: "images/xpad.png"
-         * 3. إذا لم تضع صورة، سيستخدم الكود الأيقونة (الإيموجي) تلقائياً.
-         * 4. يفضل أن تكون الصور بصيغة PNG وبخلفية شفافة لتعطي أفضل شكل.
-         *
-         *  !! تم تحديث جميع حقول 'image' بمسارات الصور المطلوبة !!
-         */
-
         const products = [
             // --- TABLETS ---
             {
@@ -450,10 +442,10 @@
                 image: "images/infinix_xpad_20_pro.png", 
                 specs: [
                     { label: "المعالج", value: "MediaTek Helio G100" },
-                    { label: "التخزين والرام", value: "256GB | 8+8GB RAM" }, // تم التعديل
+                    { label: "التخزين والرام", value: "256GB | 8+8GB RAM" }, 
                     { label: "حجم الشاشه", value: "12.0 بوصة 2K (1200x2000)" },
                     { label: "نظام التشغيل", value: "Android 15" },
-                    { label: "مرفقات الكرتونه", value: "شاحن، كابل، دليل مستخدم، كيبورد" }, // تم التعديل
+                    { label: "مرفقات الكرتونه", value: "شاحن، كابل، دليل مستخدم، كيبورد" }, 
                     { label: "البطاريه", value: "8000 mAh" }
                 ],
                 extra: ["كاميرا 8MP/5MP", "جسم معدني نحيف"]
@@ -467,13 +459,13 @@
                 image: "images/infinix_xpad_20.png",
                 specs: [
                     { label: "المعالج", value: "MediaTek Helio G88" },
-                    { label: "التخزين والرام", value: "128GB | 6+6GB RAM" }, // تم التعديل
+                    { label: "التخزين والرام", value: "128GB | 6+6GB RAM" }, 
                     { label: "حجم الشاشه", value: "11.0 بوصة FHD+ (90Hz)" },
                     { label: "نظام التشغيل", value: "Android 15" },
-                    { label: "مرفقات الكرتونه", value: "جراب هدية، شاحن 10W، كابل USB-C" }, // تم التعديل
+                    { label: "مرفقات الكرتونه", value: "جراب هدية، شاحن 10W، كابل USB-C" }, 
                     { label: "البطاريه", value: "7000 mAh" }
                 ],
-                extra: ["مساعد Folax الصوتي", "2 سماعات ستيريو"] // تم التعديل
+                extra: ["مساعد Folax الصوتي", "2 سماعات ستيريو"] 
             },
             {
                 name: "DooGee A9 Pro VIP",
@@ -484,9 +476,9 @@
                 image: "images/doogee_a9_pro_vip.png",
                 specs: [
                     { label: "المعالج", value: "Unisoc T310 Quad-Core" },
-                    { label: "التخزين والرام", value: "128GB | 20GB (4+16 Virtual)" }, // تم التعديل
+                    { label: "التخزين والرام", value: "128GB | 20GB (4+16 Virtual)" }, 
                     { label: "حجم الشاشه", value: "10.1 بوصة IPS HD+" },
-                    { label: "نظام التشغيل", value: "Android 15" }, // تم التعديل
+                    { label: "نظام التشغيل", value: "Android 15" }, 
                     { label: "مرفقات الكرتونه", value: "VIP Box Full Set" }, 
                     { label: "البطاريه", value: "6580 mAh" }
                 ],
@@ -501,9 +493,9 @@
                 image: "images/doogee_a9_vip.png",
                 specs: [
                     { label: "المعالج", value: "Unisoc T310" },
-                    { label: "التخزين والرام", value: "64GB | 3+9GB RAM" }, // تم التعديل
+                    { label: "التخزين والرام", value: "64GB | 3+9GB RAM" }, 
                     { label: "حجم الشاشه", value: "10.1 بوصة IPS HD+" },
-                    { label: "نظام التشغيل", value: "Android 15" }, // تم التعديل
+                    { label: "نظام التشغيل", value: "Android 15" }, 
                     { label: "مرفقات الكرتونه", value: "صندوق الهدايا الكامل" },
                     { label: "البطاريه", value: "6580 mAh" }
                 ],
@@ -518,9 +510,9 @@
                 image: "images/doogee_tab_a9.png",
                 specs: [
                     { label: "المعالج", value: "Unisoc T310" },
-                    { label: "التخزين والرام", value: "64GB | 3+9GB RAM" }, // تم التعديل
+                    { label: "التخزين والرام", value: "64GB | 3+9GB RAM" }, 
                     { label: "حجم الشاشه", value: "10.1 بوصة IPS" },
-                    { label: "نظام التشغيل", value: "Android 15" }, // تم التعديل
+                    { label: "نظام التشغيل", value: "Android 15" }, 
                     { label: "مرفقات الكرتونه", value: "شاحن، كابل" },
                     { label: "البطاريه", value: "6580 mAh" }
                 ],
@@ -536,9 +528,9 @@
                 specs: [
                     { label: "المعالج", value: "Unisoc T606 (8 Cores)" },
                     { label: "التخزين والرام", value: "128GB | 4GB (+6GB Virtual)" },
-                    { label: "الاتصال", value: "Wi-Fi Only" }, // تم التعديل
+                    { label: "الاتصال", value: "Wi-Fi Only" }, 
                     { label: "نظام التشغيل", value: "Android 14" },
-                    { label: "مرفقات الكرتونه", value: "جراب سيلكون شفاف، شاحن، كابل، دبوس شريحة" }, // تم التعديل
+                    { label: "مرفقات الكرتونه", value: "جراب سيلكون شفاف، شاحن، كابل، دبوس شريحة" }, 
                     { label: "البطاريه", value: "6580 mAh" }
                 ],
                 extra: ["كاميرا خلفية 13MP", "أداء سلس"]
@@ -555,7 +547,7 @@
                     { label: "التخزين والرام", value: "64GB | 4GB RAM" },
                     { label: "حجم الشاشه", value: "8.0 بوصة HD" },
                     { label: "نظام التشغيل", value: "Android (Kids Mode)" },
-                    { label: "مرفقات الكرتونه", value: "جراب مطاطي متين لحمايه التابلت من الكسر" }, // تم التعديل
+                    { label: "مرفقات الكرتونه", value: "جراب مطاطي متين لحمايه التابلت من الكسر" }, 
                     { label: "البطاريه", value: "5000 mAh" }
                 ],
                 extra: ["تطبيقات تعليمية", "ألوان مبهجة"]
