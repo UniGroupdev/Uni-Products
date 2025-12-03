@@ -174,6 +174,31 @@
             justify-content: center;
             overflow-y: auto;
         }
+        
+        /* ** تصميم فقاعة السعر الجديدة ** */
+        .price-bubble {
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            margin-bottom: 25px; /* مسافة كافية قبل المواصفات */
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #FFD700 0%, #FF9900 100%); /* تدرج ذهبي جذاب */
+            color: #1a1a1a;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(255, 153, 0, 0.4);
+            display: inline-block;
+            align-self: flex-start; /* عرضها في بداية الـ info-section */
+        }
+        .price-bubble span {
+            font-size: 1.2rem;
+            margin-left: 5px;
+            opacity: 0.8;
+        }
+        .price-bubble::before {
+            content: '🏷️'; /* أيقونة سعر لطيفة */
+            margin-left: 10px;
+        }
+
 
         .category-badge {
             display: inline-block;
@@ -191,7 +216,7 @@
             font-family: 'Cairo', sans-serif;
             font-size: 3rem;
             font-weight: 700;
-            margin-bottom: 25px; 
+            margin-bottom: 10px; /* تقليل الهامش لترك مسافة للسعر */
             line-height: 1.1;
             /* تم توحيد لون العنوان للأبيض الثابت */
             background-clip: text;
@@ -369,28 +394,33 @@
                 font-size: 1.5rem; 
                 font-weight: 700;
                 margin-top: 5px;
-                margin-bottom: 5px; 
+                margin-bottom: 10px; /* **تم التعديل:** زيادة الهامش ليصبح 10px */
                 order: 2;
-                /* تم توحيد اللون هنا أيضاً */
                 -webkit-text-fill-color: var(--text-light) !important;
             }
+            /* تعديلات الموبايل لفقاعة السعر */
+            .price-bubble {
+                font-size: 1.2rem;
+                padding: 8px 15px;
+                margin-bottom: 20px;
+                order: 3;
+            }
+
 
             .image-container { 
                 height: 110px; 
                 width: 70%;
-                order: 3;
+                order: 4;
                 margin-bottom: 5px;
             }
             .product-icon-fallback { 
                 font-size: 5rem; 
-                /* تم توحيد اللون هنا أيضاً */
                 -webkit-text-fill-color: var(--text-light) !important;
             }
             .brand-tag {
-                order: 4;
+                order: 5; 
                 font-size: 1.2rem; 
                 margin-top: 5px;
-                /* تم توحيد اللون هنا أيضاً */
                 color: var(--text-light) !important;
             }
 
@@ -400,6 +430,7 @@
                 gap: 0; 
                 margin-top: 0; 
                 margin-bottom: 0px; 
+                order: 6;
             }
             .specs-grid .spec-item {
                 border-right: none;
@@ -417,7 +448,6 @@
             }
             .specs-grid .spec-value {
                 font-size: 1rem; 
-                /* تم توحيد اللون هنا أيضاً */
                 color: var(--text-light) !important; 
             }
             .nav-btn {
@@ -453,6 +483,7 @@
                 theme: "var(--accent-infinix)",
                 icon: "icon-tablet",
                 image: "images/infinix_xpad_20_pro.png", 
+                price: "11,390", 
                 specs: [
                     { label: "المعالج", value: "MediaTek Helio G100" },
                     { label: "التخزين والرام", value: "256GB | 8+8GB RAM" }, 
@@ -470,6 +501,7 @@
                 theme: "var(--accent-infinix)",
                 icon: "icon-tablet",
                 image: "images/infinix_xpad_20.png",
+                price: "6,850", 
                 specs: [
                     { label: "المعالج", value: "MediaTek Helio G88" },
                     { label: "التخزين والرام", value: "128GB | 6+6GB RAM" }, 
@@ -487,6 +519,7 @@
                 theme: "var(--accent-doogee-vip)",
                 icon: "icon-tablet",
                 image: "images/doogee_a9_pro_vip.png",
+                price: "4,777", 
                 specs: [
                     { label: "المعالج", value: "Unisoc T310 Quad-Core" },
                     { label: "التخزين والرام", value: "128GB | 20GB (4+16 Virtual)" }, 
@@ -504,6 +537,7 @@
                 theme: "var(--accent-doogee-vip)",
                 icon: "icon-tablet",
                 image: "images/doogee_a9_vip.png",
+                price: "4,333", 
                 specs: [
                     { label: "المعالج", value: "Unisoc T310" },
                     { label: "التخزين والرام", value: "64GB | 3+9GB RAM" }, 
@@ -518,9 +552,10 @@
                 name: "DooGee TAB A9",
                 category: "Tablet | تابلت",
                 brand: "DooGee",
-                theme: "var(--accent-doogee-vip)", // تم توحيد اللون
+                theme: "var(--accent-doogee-vip)", 
                 icon: "icon-tablet",
                 image: "images/doogee_tab_a9.png",
+                price: "3,555", 
                 specs: [
                     { label: "المعالج", value: "Unisoc T310" },
                     { label: "التخزين والرام", value: "64GB | 3+9GB RAM" }, 
@@ -535,9 +570,10 @@
                 name: "G-TAB Pad 10",
                 category: "Tablet | تابلت",
                 brand: "G-TAB",
-                theme: "var(--accent-gtab)", // تم تغيير اللون
+                theme: "var(--accent-gtab)", 
                 icon: "icon-tablet",
                 image: "images/gtab_pad_10.png",
+                price: "4,444", 
                 specs: [
                     { label: "المعالج", value: "Unisoc T606 (8 Cores)" },
                     { label: "التخزين والرام", value: "128GB | 4GB (+6GB Virtual)" },
@@ -555,6 +591,7 @@
                 theme: "linear-gradient(135deg, #FF9966 0%, #FF5E62 100%)",
                 icon: "icon-tablet",
                 image: "images/gtab_kids_t8s.png",
+                price: "3,000", 
                 specs: [
                     { label: "المعالج", value: "Quad-Core Processor" },
                     { label: "التخزين والرام", value: "64GB | 4GB RAM" },
@@ -569,9 +606,10 @@
                 name: "G-TAB T9 Series",
                 category: "Tablet | تابلت",
                 brand: "G-TAB",
-                theme: "var(--accent-gtab)", // تم تغيير اللون
+                theme: "var(--accent-gtab)", 
                 icon: "icon-tablet",
                 image: "images/gtab_t9_series.png",
+                price: "3,333", 
                 specs: [
                     { label: "المعالج", value: "Rockchip RK3562" },
                     { label: "التخزين والرام", value: "64GB | 3GB RAM" },
@@ -587,9 +625,10 @@
                 name: "ZTE Blade V60 Design",
                 category: "Smartphone | هاتف ذكي",
                 brand: "ZTE",
-                theme: "var(--accent-zte)", // تم توحيد اللون
+                theme: "var(--accent-zte)", 
                 icon: "icon-phone",
                 image: "images/zte_blade_v60_design.png",
+                price: "4,250", 
                 specs: [
                     { label: "المعالج", value: "Unisoc T606" },
                     { label: "التخزين والرام", value: "256GB | Up to 16GB RAM" },
@@ -604,9 +643,10 @@
                 name: "ZTE Blade A55",
                 category: "Smartphone | هاتف ذكي",
                 brand: "ZTE",
-                theme: "var(--accent-zte)", // تم توحيد اللون
+                theme: "var(--accent-zte)", 
                 icon: "icon-phone",
                 image: "images/zte_blade_a55.png",
+                price: "3,250", 
                 specs: [
                     { label: "المعالج", value: "Unisoc SC9863A" },
                     { label: "التخزين والرام", value: "128GB | 4GB RAM" }, 
@@ -622,9 +662,10 @@
                 name: "Infinix SmartWatch XW3E", 
                 category: "Smart Watch | ساعة ذكية",
                 brand: "Infinix",
-                theme: "var(--accent-infinix)", // تم توحيد اللون
+                theme: "var(--accent-infinix)", 
                 icon: "icon-watch",
                 image: "images/XW3E.png", 
+                price: "1,735", 
                 specs: [
                     { label: "الشاشة", value: "1.43 بوصة AMOLED (466×466)" }, 
                     { label: "الاتصال", value: "Bluetooth 5.2 / 5.3 Calling" }, 
@@ -639,9 +680,10 @@
                 name: "Infinix Watch N4 Pro (XW4E)",
                 category: "Smart Watch | ساعة ذكية",
                 brand: "Infinix",
-                theme: "var(--accent-infinix)", // تم توحيد اللون
+                theme: "var(--accent-infinix)", 
                 icon: "icon-watch",
                 image: "images/infinix_watch_n4_pro.png",
+                price: "2,400", 
                 specs: [
                     { label: "الشاشة", value: "1.43 بوصة AMOLED" },
                     { label: "الدقة", value: "466x466 بكسل عالية" },
@@ -653,12 +695,13 @@
                 extra: ["شاشة أموليد", "تصميم دائري فاخر"]
             },
             {
-                name: "Infinix Watch N4 (XW4)",
+                name: "Infinix Watch N4 (XW4)", 
                 category: "Smart Watch | ساعة ذكية",
                 brand: "Infinix",
-                theme: "var(--accent-infinix)", // تم توحيد اللون
+                theme: "var(--accent-infinix)", 
                 icon: "icon-watch",
                 image: "images/XW4-N4.png", 
+                price: "1,100", 
                 specs: [
                     { label: "الشاشة", value: "1.39 بوصة HD (360×360)" }, 
                     { label: "البطارية", value: "300 mAh (تدوم حتى 12 يومًا)" }, 
@@ -673,9 +716,10 @@
                 name: "Infinix SmartWatch XW3GT (Gold Edition)", 
                 category: "Smart Watch | ساعة ذكية",
                 brand: "Infinix",
-                theme: "var(--accent-doogee-vip)", // **تم الاحتفاظ باللون الذهبي حسب الطلب ليبقى مميزاً**
+                theme: "var(--accent-doogee-vip)", 
                 icon: "icon-watch",
                 image: "images/XW3GT.png", 
+                price: "1,700", 
                 specs: [
                     { label: "الشاشة", value: "1.53 بوصة IPS (360×360)" }, 
                     { label: "البطارية", value: "500 mAh (تدوم حتى 10 أيام استخدام ثقيل)" }, 
@@ -690,9 +734,10 @@
                 name: "Infinix Watch H4 (XW4L)",
                 category: "Smart Watch | ساعة ذكية",
                 brand: "Infinix",
-                theme: "var(--accent-infinix)", // تم توحيد اللون
+                theme: "var(--accent-infinix)", 
                 icon: "icon-watch",
                 image: "images/infinix_watch_h4.png",
+                price: "850", 
                 specs: [
                     { label: "الشاشة", value: "2.04 بوصة HD ضخمة" },
                     { label: "البطارية", value: "300mAh (7 أيام)" },
@@ -708,9 +753,10 @@
                 name: "Infinix TWS XEOE01", 
                 category: "Audio | سماعات (مفتوحة)",
                 brand: "Infinix",
-                theme: "var(--accent-infinix)", // تم توحيد اللون
+                theme: "var(--accent-infinix)", 
                 icon: "icon-buds",
                 image: "images/infinix_xbuds_3_loop.png",
+                price: "1,200", 
                 specs: [
                     { label: "النوع", value: "Open-Ear (تصميم حلقة Loop)" },
                     { label: "التقنية", value: "Air Conduction (توصيل الهواء)" },
@@ -725,9 +771,10 @@
                 name: "Infinix XE28 (Buds NC)", 
                 category: "Audio | سماعات (عزل ضوضاء)",
                 brand: "Infinix",
-                theme: "var(--accent-infinix)", // تم توحيد اللون
+                theme: "var(--accent-infinix)", 
                 icon: "icon-buds",
                 image: "images/XE28.png",
+                price: "1,000", 
                 specs: [
                     { label: "النوع", value: "In-Ear (داخل الأذن)" },
                     { label: "العزل", value: "Active Noise Cancellation (ANC) حتى 30dB" },
@@ -742,9 +789,10 @@
                 name: "Infinix XE30S Black", 
                 category: "Audio | سماعات (للألعاب)",
                 brand: "Infinix",
-                theme: "var(--accent-infinix)", // تم توحيد اللون
+                theme: "var(--accent-infinix)", 
                 icon: "icon-buds",
                 image: "images/Infinix_XE30S.png",
+                price: "900", 
                 specs: [
                     { label: "التصميم", value: "GT Buds 3 (تصميم Mecha)" },
                     { label: "وضع الألعاب", value: "Low Latency (45ms)" },
@@ -759,9 +807,10 @@
                 name: "Infinix TWS XE37", 
                 category: "Audio | سماعات (شاشة وتحكم)",
                 brand: "Infinix",
-                theme: "var(--accent-infinix)", // تم توحيد اللون
+                theme: "var(--accent-infinix)", 
                 icon: "icon-buds",
                 image: "images/xe37base.png",
+                price: "3,000", 
                 specs: [
                     { label: "العلبة", value: "Touchscreen Case (شاشة لمس ملونة للتحكم)" },
                     { label: "الترجمة", value: "AI Translation (ترجمة فورية لـ 162 لغة)" },
@@ -779,6 +828,7 @@
                 theme: "linear-gradient(135deg, #FF6F61 0%, #FFB6C1 100%)", // لون جديد لـ OPPO
                 icon: "icon-buds",
                 image: "images/OPPOEncoBuds2.png",
+                price: "780", 
                 specs: [
                     { label: "اللون", value: "Moonlight (أبيض) مع ساق قصيرة" },
                     { label: "المحرك", value: "10mm Titanized Drivers (Bass قوي)" },
@@ -832,15 +882,27 @@
                 } else {
                     visualContent = `<div class="product-icon-fallback ${product.icon}" style="background: ${product.theme}; -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></div>`;
                 }
+                
+                // إنشاء عنصر السعر (Price Bubble)
+                const priceContent = product.price ? `
+                    <div class="price-bubble">
+                        ${product.price} <span>ج.م</span>
+                    </div>
+                ` : '';
+
 
                 slide.innerHTML = `
                     <div class="bg-overlay" style="background-image: ${product.theme};"></div>
                     <div class="product-card">
                         <div class="visual-section">
                             <div class="visual-circle" style="background: ${product.theme};"></div>
-                            <!-- **تم نقل العنوان والفئة هنا** -->
+                            <!-- **العنوان والفئة** -->
                             <span class="category-badge">${product.category}</span>
                             <h1 class="product-title" style="background: ${product.theme}; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">${product.name}</h1>
+                            
+                            <!-- **فقاعة السعر هنا** -->
+                            ${priceContent}
+
                             <div class="image-container">
                                 ${visualContent}
                             </div>
